@@ -11,6 +11,11 @@ body {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+@include breakpoint-up(small) {
+    body {
+        padding: 4rem 0;
+    }
+}
 
 
 .grid {
@@ -96,6 +101,7 @@ body {
         column-gap: 5.4375rem;
         align-items: flex-start;
         padding: 0;
+        margin: 0 auto;
         position: relative;
         
         

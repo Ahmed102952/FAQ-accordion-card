@@ -10,6 +10,7 @@ body {
     background-image: linear-gradient(to bottom, $softViolet, $softBlue);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+
 }
 @include breakpoint-up(small) {
     body {
@@ -64,6 +65,7 @@ body {
                 color: $veryDarkGrayishBlue;
                 font-size: 0.875rem;
                 font-weight: 400;
+                line-height: 2;
             }
             p {
                 max-height: 0;

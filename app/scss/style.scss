@@ -1,0 +1,160 @@
+@import 'variables';
+@import 'mixin';
+@import 'globals';
+
+// Page style
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    background-image: linear-gradient(to bottom, $softViolet, $softBlue);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 57.5rem;
+    width: 100%;
+    padding-left: 1.625rem;
+    padding-right: 1.625rem;
+    padding-bottom: 2.9375rem;
+    margin: 0 auto;
+    margin-top: 9.375rem;
+    background-color: #fff;
+    border-radius: 22px;
+
+    &__img {
+        width: 15rem;
+        height: 13.4375rem;
+        background: url(../assests/images/illustration-woman-online-mobile.svg), url(../assests/images/bg-pattern-mobile.svg);
+        background-size: 100%, 100%;
+        background-repeat: no-repeat;
+        background-position: center top, center bottom;
+        margin-top: -6.71875rem;
+
+        
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        h1 {
+            font-size: 1.875rem;
+            margin-bottom: 1.25rem;
+        }
+        .text-group {
+            width: 100%;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid $lightGray;
+            position: relative;
+
+            h2 {
+                width: calc(100% - 12px);
+                color: $veryDarkGrayishBlue;
+                font-size: 0.875rem;
+                font-weight: 400;
+            }
+            p {
+                max-height: 0;
+                font-size: 0.75rem;
+                color: $darkGrayishBlue;
+                font-weight: 400;
+                transition: 300ms;
+                overflow: hidden;
+            }
+            .arrow {
+                position: absolute;
+                top: 1.25rem;
+                right: 0;
+                transform: translateY(100%);
+            }
+            &.active {
+                h2 {
+                    color: $veryDarkDesaturatedBlue;
+                    font-weight: 700;
+                }
+                p {
+                    max-height: 150px;
+                }
+                .arrow {
+                    transform: translateY(100%) rotate(180deg);
+                }
+            }
+        }
+          
+        
+    }
+    @include breakpoint-up(small) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5.4375rem;
+        align-items: flex-start;
+        padding: 0;
+        position: relative;
+        
+        
+        &__img {
+            // position: relative;
+            // width: 100%;
+            // height: 100%;
+            // background: url(../assests/images/illustration-woman-online-desktop.svg), url(../assests/images/bg-pattern-desktop.svg);
+            // background-repeat: no-repeat;
+            // background-size: 100% ;
+            // background-position: right center, 104% 64%;
+            margin: 0;
+            background: none;
+            width: 100%;
+            .wrapper {
+                width: 100%;
+                height: 32rem;
+            }
+            
+            img {
+                position: absolute;
+                left: 0;
+            }
+            .illustration {
+                width: 100%;
+                height: 32rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                img {
+                top: 50%;
+                left: 0;
+                transform: translate(-15%, -50%);
+                }
+            }
+            .pattern {
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                img {
+                    transform: scale(1.8) translate(-35%, 0);
+                }
+            }
+            .box {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(-50%, -25%);
+            }
+            
+        }
+        &__text {
+            padding-top: 4.5rem;
+            padding-bottom: 5.125rem;
+            padding-right: 5.125rem;
+        }
+    }
+}
